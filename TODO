@@ -1,0 +1,30 @@
+SSLUG Git Tutorial
+==================
+
+Tre foredrag á 45 minutter, efterfulgt af et kvarter med spørgsmål fra
+publikum. Vi laver slides på engelsk, men holder de enkelte oplæg på
+dansk og for hvert oplæg hæver vi niveauet markant.
+
+Foredrag I
+----------
+
+ - Introduktion til VCS.
+ - Introduktion til DVCS.
+ - Filosofien bag.
+ - Arbejdsgang.
+ - Lidt historie.
+ - Commits, tags, branches, etc.
+ - ...
+
+Foredrag II
+-----------
+
+FIXME: Mangler.
+
+
+Foredrag III
+------------
+
+FIXME: Mangler.
+
+ .. vim: set spell spelllang=da tw=70 :
