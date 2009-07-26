@@ -10,6 +10,9 @@
 \usepackage{hyperref}
 \usepackage{pgf}
 \usepackage{tikz}
+\usepackage{alltt}
+\usepackage{bold-extra}
+
 \usetikzlibrary{arrows}
 
 \hypersetup{
@@ -21,7 +24,7 @@
     pdfproducer={pdfLaTeX and hyperref}
 }
 
-\setbeamercolor{structure}{fg=OliveGreen!40!black}
+\setbeamercolor{structure}{fg=Green!75!black}
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{footline}{}
 
@@ -31,6 +34,8 @@
 \author{\href{mailto:jesper.louis.andersen@gmail.com}{Jesper Louis Andersen}
         \and
         \href{mailto:ahf@0x90.dk}{Alexander Færøy}}
+
+\newenvironment{usercmd}[1]{\begin{alltt}\$ \textbf{#1}}{\end{alltt}}
 
 \begin{document}
 
