@@ -2,8 +2,8 @@ Introduktion til Git
 ====================
 
 En introduktion til versionsstyringssystemet Git af udviklere for udviklere.
-Idéen er at vi springer de mest basale ting om versionsstyringssystemer over og
-vil derfor fokusere på nogle af de smarte ting som Git kan. Vi vil blandt andet
+Idéen er at vi springer over de mest basale ting om versionsstyringssystemer og
+fokuserer på nogle af de smarte ting Git kan. Vi vil blandt andet
 gennemgå aspekter af Git som for eksempel:
 
 - Distribueret vs. centraliseret versionsstyring.
@@ -19,11 +19,12 @@ foredragsholderne efter foredraget.
 Om Jesper Louis Andersen
 ------------------------
 
-Jesper Louis Andersen er Bachelor i Datalogi og er i skrivende stund igang med
-at tage sin kandidatgrad. Han interesserer sig for programmeringssprog af alle
-slags, samt hvad teknologien bag også kan anvendes til uden for sprog-feltet.
-For tiden køres der med Ubuntu Linux, men han har tidligere kørt Redhat,
-Debian, FreeBSD, NetBSD og OpenBSD.
+Jesper Louis Andersen er Bachelor i Datalogi og er i skrivende stund i
+gang med at tage sin kandidatgrad. Han interesserer sig for
+programmeringssprog af alle slags, samt hvad teknologien bag også kan
+anvendes til uden for sprog-feltet.  For tiden køres der med Ubuntu
+Linux, men han har tidligere kørt Redhat, Debian, FreeBSD, NetBSD og
+OpenBSD.
 
 
 Om Alexander Færøy
