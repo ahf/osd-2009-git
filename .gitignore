@@ -10,3 +10,4 @@
 *.lox
 *.out
 *.dvi
+/osd/auto/slides.el

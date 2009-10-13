@@ -1,0 +1,112 @@
+%%
+%% This document is released under the Creative Commons Attribution-Share Alike 3.0 Licence. The full
+%% text of this licence can be found at http://creativecommons.org/licenses/by-sa/3.0/.
+%%
+\documentclass[xcolor=pdftex,dvipsnames]{beamer}
+
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[english]{babel}
+\usepackage{hyperref}
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{alltt}
+\usepackage{bold-extra}
+
+\usetikzlibrary{arrows}
+
+\hypersetup{
+    colorlinks=false,
+    pdftitle={Git Tutorial part I: An Introduction to Source Code Management Systems},
+    pdfauthor={Jesper Louis Andersen and Alexander Færøy},
+    pdflang={en},
+    pdfcreator={pdfLaTeX and hyperref},
+    pdfproducer={pdfLaTeX and hyperref}
+}
+
+\setbeamercolor{structure}{fg=Green!75!black}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{}
+
+\title{Git}
+\subtitle{Source code management the UNIX way}
+
+\author{\href{mailto:jesper.louis.andersen@gmail.com}{Jesper Louis Andersen}
+        \and
+        \href{mailto:ahf@0x90.dk}{Alexander Færøy}}
+
+\newenvironment{usercmd}[1]{\begin{alltt}\$ \textbf{#1}}{\end{alltt}}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Table of Contents}
+    \tableofcontents
+\end{frame}
+
+\section{Introduction}
+\begin{frame}{Forside}\end{frame}
+\begin{frame}{The History of Git}
+    \begin{itemize}
+        \item Initially designed by Linus Torvalds.
+        \item Git became self-hosted on April 7, 2005.
+        \item The Linux Kernel project moved to Git 9 days later.
+    \end{itemize}
+\end{frame}
+\begin{frame}{What is?}
+  \begin{itemize}
+  \item Storage system (Persistence)
+  \item Revision control on top
+  \item UNIX tools for manipulation
+  \end{itemize}
+\end{frame}
+
+\section{Storage Model}
+\begin{frame}{Persistence}
+  \begin{itemize}
+  \item Databases
+  \item Functional languages
+  \item Never overwrite old data
+  \end{itemize}
+\end{frame}
+\begin{frame}{Blob}\end{frame}
+\begin{frame}{Tree}\end{frame}
+\begin{frame}{Commit}\end{frame}
+\begin{frame}{Tag}\end{frame}
+\begin{frame}{Storage}
+  \begin{itemize}
+  \item Reuse existing subtrees (dedup)
+  \item Always write a new blob
+  \end{itemize}
+\end{frame}
+\begin{frame}{Packs}
+  \begin{itemize}
+  \item Heuristic
+  \item fsync()
+  \item GC
+  \end{itemize}
+\end{frame}
+\begin{frame}{Index}\end{frame}
+\begin{frame}{Index(2)}\end{frame}
+\begin{frame}{Distribution(1)}\end{frame}
+\begin{frame}{Distribution(2)}\end{frame}
+
+\section{Practical git}
+
+\section{Question Time}
+\begin{frame}{Question Time}
+    \begin{itemize}
+        \item Questions from the audience?
+        \item \url{http://github.com/ahf/sslug-workshop-git/}
+    \end{itemize}
+\end{frame}
+
+\end{document}
+
+% vim: set et spell spelllang=en tw=120 :
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
