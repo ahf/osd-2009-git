@@ -105,22 +105,40 @@
   \item Consistency: Use the SHA1-sums
   \end{itemize}
 \end{frame}
-\begin{frame}{Tag}\end{frame}
-\begin{frame}{Storage}
+\begin{frame}{Tag}
+  \begin{itemize}
+  \item A Tag is a reference to a Commit
+  \item These beasts can be cryptographically signed
+  \end{itemize}
+\end{frame}
+\begin{frame}{Concept: Storage principles}
   \begin{itemize}
   \item Reuse existing subtrees (dedup)
-  \item Always write a new blob
+  \item Always write a new object
   \end{itemize}
 \end{frame}
-\begin{frame}{Packs}
+\begin{frame}{Concept: Packs}
   \begin{itemize}
-  \item Heuristic
-  \item fsync()
-  \item GC
+  \item A pack compresses a set of objects into a single file
+  \item Delta Compression: Order objects by (type, basename,
+    desc. size) lexicographically.
+  \item Delta Compression: Run a sliding window on the order, search
+    for delta-coding opportunities.
+  \item Storage: Recency ordered in the pack from the HEAD
+  \item Storage: Good locality
+  \item Only ``destructive operation'' -- fsync()
+  \item Ideas the same as garbage collection (command is \texttt{git gc})
   \end{itemize}
 \end{frame}
-\begin{frame}{Index}\end{frame}
-\begin{frame}{Index(2)}\end{frame}
+\begin{frame}{Concept: Index}
+Conceptual Index location:
+$$
+  WorkingDir \leftrightarrow Index \leftrightarrow Storage
+$$
+\end{frame}
+\begin{frame}{Concept: Index(2)}
+  TODO!
+\end{frame}
 \begin{frame}{Distribution(1)}\end{frame}
 \begin{frame}{Distribution(2)}\end{frame}
 
