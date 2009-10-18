@@ -46,33 +46,65 @@
 \end{frame}
 
 \section{Introduction}
-\begin{frame}{Forside}\end{frame}
 \begin{frame}{The History of Git}
     \begin{itemize}
         \item Initially designed by Linus Torvalds.
         \item Git became self-hosted on April 7, 2005.
         \item The Linux Kernel project moved to Git 9 days later.
+        \item Today, thousands of projects
     \end{itemize}
 \end{frame}
 \begin{frame}{What is?}
   \begin{itemize}
   \item Storage system (Persistence)
   \item Revision control on top
-  \item UNIX tools for manipulation
+  \item UNIX philosophy in the tool-set
+  \item Key advantage: Flexibility
+  \item Key disadvantage: Relatively steep learning curve
+  \end{itemize}
+\end{frame}
+\begin{frame}
+  \frametitle{What can it do?}
+  \begin{itemize}
+  \item Projects \emph{evolve}.
+  \item Git, like SVN, Darcs, CVS, Hg and Bazaar, manages project
+    data, tracks history, facilitates collaboration etc.
   \end{itemize}
 \end{frame}
 
 \section{Storage Model}
-\begin{frame}{Persistence}
+\begin{frame}{Concept: Persistence}
   \begin{itemize}
   \item Databases
   \item Functional languages
-  \item Never overwrite old data
+  \item Accounting/Finance
+  \item \emph{Never} overwrite old data
   \end{itemize}
 \end{frame}
-\begin{frame}{Blob}\end{frame}
-\begin{frame}{Tree}\end{frame}
-\begin{frame}{Commit}\end{frame}
+\begin{frame}{Term: Blob}
+  \begin{itemize}
+  \item A Blob stores \emph{content}, ie what is in a file
+  \item Compressed, for saving storage and disk reads
+  \item Identified by an SHA1 checksum
+  \item Note that SHA1 is 2nd preimage resistant (still)
+  \end{itemize}
+\end{frame}
+\begin{frame}{Term: Tree}
+  \begin{itemize}
+  \item A Tree contains a list of references paired with meta-data
+  \item References points to either blobs or other trees
+  \item This is used to map (among other things) the directory
+    structure
+  \item Identified by an SHA1 checksum
+  \end{itemize}
+\end{frame}
+\begin{frame}{Term: Commit}
+  \begin{itemize}
+  \item A Commit references a Tree and some parent commits
+  \item Identified by an SHA1 checksum
+  \item Consistency: Use the SHA1-sums
+  \end{itemize}
+\end{frame}
 \begin{frame}{Tag}\end{frame}
 \begin{frame}{Storage}
   \begin{itemize}

@@ -11,3 +11,5 @@
 *.out
 *.dvi
 /osd/auto/slides.el
+/osd/slides.nav
+/osd/slides.snm
