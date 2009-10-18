@@ -79,6 +79,7 @@
   \item Functional languages
   \item Accounting/Finance
   \item \emph{Never} overwrite old data
+  \item Git breaks the rules in a few places
   \end{itemize}
 \end{frame}
 \begin{frame}{Term: Blob}
@@ -139,10 +140,89 @@ $$
 \begin{frame}{Concept: Index(2)}
   TODO!
 \end{frame}
-\begin{frame}{Distribution(1)}\end{frame}
-\begin{frame}{Distribution(2)}\end{frame}
+\begin{frame}{Concept: Distribution(1)}
+  \begin{itemize}
+  \item A \emph{Ref} is a stick-it-note we can place on a commit.
+  \item Refs are used for \emph{branches}, different paths in development.
+  \item Refs are used for certain magic markers in the storage tree.
+  \item Some refs are \emph{local}, other are \emph{remote}
+  \end{itemize}
+\end{frame}
+\begin{frame}{Concept: Distribution(2)}
+  \begin{itemize}
+  \item Distribution happens by cloning the repository -- copying all
+    its contents
+  \item The storage model makes this approach feasible
+  \item Fetches: Copy the difference, track where the refs moved to.
+  \item Pushes:  Copy the difference, track where the refs moved to.
+  \end{itemize}
+\end{frame}
 
 \section{Practical git}
+\begin{frame}
+  \frametitle{How to start}
+  \begin{itemize}
+  \item Grab a tutorial
+  \item We think you gained a lot with the knowledge about the
+    storage.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{git add}
+  \begin{itemize}
+  \item When you run \texttt{git add}, you add things to the index
+  \item \texttt{git commit} snapshots what is in the index alone.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{merge/rebase}
+  There is a difference between merge and rebase. Usually you want to
+  rebase in git:
+% \begin{verbatim}
+%       A---B---C topic
+%      /
+% D---E---F---G master
+% \end{verbatim}
+% \begin{verbatim}
+%              A--B--C topic
+%              /
+% D---E---F---G master
+% \end{verbatim}
+\end{frame}
+
+\begin{frame}
+  \frametitle{merge/rebase (2)}
+  \begin{itemize}
+  \item Note: Patches already in upstream are skipped
+  \item Keeps a linear development path -- easier to track for other
+    people
+  \item As long as history is \emph{local} it can be rewritten!
+    (Persistence break!)
+  \item Do not rewrite public branches, or people can't track it.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Publishing your changes}
+  \begin{itemize}
+  \item One simple way is \texttt{github.com} or \texttt{gitorius.org}
+  \item Provides an outlet for publishing your tree.
+  \item For internal hosting at companies, either pay Github or
+  \item Use a web-interface on top of a repository, or
+  \item Use no central repository system at all!
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Editor integration}
+  \begin{itemize}
+  \item Emacs: magit-mode
+  \item Vim: There is git-vim, or just use the command line
+  \end{itemize}
+\end{frame}
+
 
 \section{Question Time}
 \begin{frame}{Question Time}
