@@ -12,6 +12,7 @@
 \usepackage{tikz}
 \usepackage{alltt}
 \usepackage{bold-extra}
+\usepackage{verbatim}
 
 \usetikzlibrary{arrows}
 
@@ -138,7 +139,12 @@ $$
 $$
 \end{frame}
 \begin{frame}{Concept: Index(2)}
-  TODO!
+  \begin{itemize}
+  \item Index is \emph{mutable}, storage is \emph{immutable}.
+  \item UI View: Staging area for the next commit.
+  \item Backend View: Directory cache for speeding up operations.
+  \item Git owes much of its speed to the index.
+  \end{itemize}
 \end{frame}
 \begin{frame}{Concept: Distribution(1)}
   \begin{itemize}
@@ -176,20 +182,20 @@ $$
   \end{itemize}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{merge/rebase}
   There is a difference between merge and rebase. Usually you want to
   rebase in git:
-% \begin{verbatim}
-%       A---B---C topic
-%      /
-% D---E---F---G master
-% \end{verbatim}
-% \begin{verbatim}
-%              A--B--C topic
-%              /
-% D---E---F---G master
-% \end{verbatim}
+\begin{verbatim}
+      A---B---C topic
+     /
+D---E---F---G master
+\end{verbatim}
+\begin{verbatim}
+              A--B--C topic
+             /
+D---E---F---G master
+ \end{verbatim}
 \end{frame}
 
 \begin{frame}
@@ -200,7 +206,17 @@ $$
     people
   \item As long as history is \emph{local} it can be rewritten!
     (Persistence break!)
-  \item Do not rewrite public branches, or people can't track it.
+  \item Do not rewrite public branches, or people can't track it
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Moving files}
+  \begin{itemize}
+  \item Controversy: git does not track that a file has been moved. It
+    tracks it as a content change.
+  \item A heuristic decides if the file is a move when browsing.
+  \item Usually gets it right in most cases
   \end{itemize}
 \end{frame}
 
@@ -208,7 +224,7 @@ $$
   \frametitle{Publishing your changes}
   \begin{itemize}
   \item One simple way is \texttt{github.com} or \texttt{gitorius.org}
-  \item Provides an outlet for publishing your tree.
+  \item Provides an outlet for publishing your tree
   \item For internal hosting at companies, either pay Github or
   \item Use a web-interface on top of a repository, or
   \item Use no central repository system at all!
@@ -216,10 +232,11 @@ $$
 \end{frame}
 
 \begin{frame}
-  \frametitle{Editor integration}
+  \frametitle{Editor integration etc.}
   \begin{itemize}
   \item Emacs: magit-mode
   \item Vim: There is git-vim, or just use the command line
+  \item gitk -- interface to git via Tk
   \end{itemize}
 \end{frame}
 
