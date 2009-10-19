@@ -52,23 +52,23 @@
         \item Initially designed by Linus Torvalds.
         \item Git became self-hosted on April 7, 2005.
         \item The Linux Kernel project moved to Git 9 days later.
-        \item Today, thousands of projects
+        \item Today, thousands of projects.
     \end{itemize}
 \end{frame}
 \begin{frame}{What is?}
   \begin{itemize}
-  \item Storage system (Persistence)
-  \item Revision control on top
-  \item UNIX philosophy in the tool-set
-  \item Key advantage: Flexibility
-  \item Key disadvantage: Relatively steep learning curve
+  \item Storage system (Persistence).
+  \item Revision control on top.
+  \item UNIX philosophy in the tool-set.
+  \item Key advantage: Flexibility, speed.
+  \item Key disadvantage: Relatively steep learning curve.
   \end{itemize}
 \end{frame}
 \begin{frame}
   \frametitle{What can it do?}
   \begin{itemize}
   \item Projects \emph{evolve}.
-  \item Git, like SVN, Darcs, CVS, Hg and Bazaar, manages project
+  \item Git, like SVN, Darcs, CVS, Hg and Bazaar, manages project.
     data, tracks history, facilitates collaboration etc.
   \end{itemize}
 \end{frame}
@@ -76,60 +76,60 @@
 \section{Storage Model}
 \begin{frame}{Concept: Persistence}
   \begin{itemize}
-  \item Databases
-  \item Functional languages
-  \item Accounting/Finance
-  \item \emph{Never} overwrite old data
-  \item Git breaks the rules in a few places
+  \item Databases.
+  \item Functional languages.
+  \item Accounting/Finance.
+  \item \emph{Never} overwrite old data.
+  \item Git breaks the rules in a few places.
   \end{itemize}
 \end{frame}
 \begin{frame}{Term: Blob}
   \begin{itemize}
-  \item A Blob stores \emph{content}, ie what is in a file
-  \item Compressed, for saving storage and disk reads
-  \item Identified by an SHA1 checksum
-  \item Note that SHA1 is 2nd preimage resistant (still)
+  \item A Blob stores \emph{content}, ie what is in a file.
+  \item Compressed, for saving storage and disk reads.
+  \item Identified by an SHA1 checksum.
+  \item Note that SHA1 is 2nd preimage resistant (still).
   \end{itemize}
 \end{frame}
 \begin{frame}{Term: Tree}
   \begin{itemize}
-  \item A Tree contains a list of references paired with meta-data
-  \item References points to either blobs or other trees
+  \item A Tree contains a list of references paired with meta-data.
+  \item References points to either blobs or other trees.
   \item This is used to map (among other things) the directory
-    structure
-  \item Identified by an SHA1 checksum
+    structure.
+  \item Identified by an SHA1 checksum.
   \end{itemize}
 \end{frame}
 \begin{frame}{Term: Commit}
   \begin{itemize}
-  \item A Commit references a Tree and some parent commits
-  \item Identified by an SHA1 checksum
-  \item Consistency: Use the SHA1-sums
+  \item A Commit references a Tree and some parent commits.
+  \item Identified by an SHA1 checksum.
+  \item Consistency: Use the SHA1-sums.
   \end{itemize}
 \end{frame}
 \begin{frame}{Tag}
   \begin{itemize}
-  \item A Tag is a reference to a Commit
-  \item These beasts can be cryptographically signed
+  \item A Tag is a reference to a Commit.
+  \item These beasts can be cryptographically signed.
   \end{itemize}
 \end{frame}
 \begin{frame}{Concept: Storage principles}
   \begin{itemize}
-  \item Reuse existing subtrees (dedup)
-  \item Always write a new object
+  \item Reuse existing subtrees (dedup).
+  \item Always write a new object.
   \end{itemize}
 \end{frame}
 \begin{frame}{Concept: Packs}
   \begin{itemize}
-  \item A pack compresses a set of objects into a single file
+  \item A pack compresses a set of objects into a single file.
   \item Delta Compression: Order objects by (type, basename,
     desc. size) lexicographically.
   \item Delta Compression: Run a sliding window on the order, search
     for delta-coding opportunities.
-  \item Storage: Recency ordered in the pack from the HEAD
-  \item Storage: Good locality
-  \item Only ``destructive operation'' -- fsync()
-  \item Ideas the same as garbage collection (command is \texttt{git gc})
+  \item Storage: Recency ordered in the pack from the HEAD.
+  \item Storage: Good locality.
+  \item Only ``destructive operation'' -- fsync().
+  \item Ideas the same as garbage collection.
   \end{itemize}
 \end{frame}
 \begin{frame}{Concept: Index}
@@ -151,14 +151,14 @@ $$
   \item A \emph{Ref} is a stick-it-note we can place on a commit.
   \item Refs are used for \emph{branches}, different paths in development.
   \item Refs are used for certain magic markers in the storage tree.
-  \item Some refs are \emph{local}, other are \emph{remote}
+  \item Some refs are \emph{local}, other are \emph{remote}.
   \end{itemize}
 \end{frame}
 \begin{frame}{Concept: Distribution(2)}
   \begin{itemize}
   \item Distribution happens by cloning the repository -- copying all
-    its contents
-  \item The storage model makes this approach feasible
+    its contents.
+  \item The storage model makes this approach feasible.
   \item Fetches: Copy the difference, track where the refs moved to.
   \item Pushes:  Copy the difference, track where the refs moved to.
   \end{itemize}
@@ -168,7 +168,7 @@ $$
 \begin{frame}
   \frametitle{How to start}
   \begin{itemize}
-  \item Grab a tutorial
+  \item Grab a tutorial.
   \item We think you gained a lot with the knowledge about the
     storage.
   \end{itemize}
@@ -177,7 +177,7 @@ $$
 \begin{frame}
   \frametitle{git add}
   \begin{itemize}
-  \item When you run \texttt{git add}, you add things to the index
+  \item When you run \texttt{git add}, you add things to the index.
   \item \texttt{git commit} snapshots what is in the index alone.
   \end{itemize}
 \end{frame}
@@ -201,12 +201,12 @@ D---E---F---G master
 \begin{frame}
   \frametitle{merge/rebase (2)}
   \begin{itemize}
-  \item Note: Patches already in upstream are skipped
+  \item Note: Patches already in upstream are skipped.
   \item Keeps a linear development path -- easier to track for other
-    people
+    people.
   \item As long as history is \emph{local} it can be rewritten!
     (Persistence break!)
-  \item Do not rewrite public branches, or people can't track it
+  \item Do not rewrite public branches, or people can't track it.
   \end{itemize}
 \end{frame}
 
@@ -216,16 +216,16 @@ D---E---F---G master
   \item Controversy: git does not track that a file has been moved. It
     tracks it as a content change.
   \item A heuristic decides if the file is a move when browsing.
-  \item Usually gets it right in most cases
+  \item Usually gets it right in most cases.
   \end{itemize}
 \end{frame}
 
 \begin{frame}
   \frametitle{Publishing your changes}
   \begin{itemize}
-  \item One simple way is \texttt{github.com} or \texttt{gitorius.org}
-  \item Provides an outlet for publishing your tree
-  \item For internal hosting at companies, either pay Github or
+  \item One simple way is \texttt{github.com} or \texttt{gitorius.org}.
+  \item Provides an outlet for publishing your tree.
+  \item For internal hosting at companies, either pay Github, or
   \item Use a web-interface on top of a repository, or
   \item Use no central repository system at all!
   \end{itemize}
@@ -234,9 +234,9 @@ D---E---F---G master
 \begin{frame}
   \frametitle{Editor integration etc.}
   \begin{itemize}
-  \item Emacs: magit-mode
-  \item Vim: There is git-vim, or just use the command line
-  \item gitk -- interface to git via Tk
+  \item Emacs: magit-mode.
+  \item Vim: There is git-vim, or just use the command line.
+  \item gitk -- interface to git via Tk.
   \end{itemize}
 \end{frame}
 
