@@ -113,6 +113,24 @@
   \item These beasts can be cryptographically signed.
   \end{itemize}
 \end{frame}
+\begin{frame}[fragile]
+  \frametitle{For functional programmers}
+\begin{verbatim}
+type meta;
+datatype blob = BLOB of (Word8.word vector)
+
+datatype tree = TREE of { name : string,
+                          content : tree_content } list
+and tree_content = TC_Tree of tree * meta
+                 | TC_Blob of blob * meta
+
+datatype commit = COMMIT of { parents : commit list,
+                              author : string,
+                              date : Date.date,
+                              message : string,
+                              t : tree }
+\end{verbatim}
+\end{frame}
 \begin{frame}{Concept: Storage principles}
   \begin{itemize}
   \item Reuse existing subtrees (dedup).
